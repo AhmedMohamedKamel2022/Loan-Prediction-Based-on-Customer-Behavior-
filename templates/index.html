@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Loan Prediction Based on Customer Behavior</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/static/images/download.png">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  </head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+      <form 
+            action="/predict" method="POST"
+              target="_blank" 
+            >
+            
+            <br>
+            <label for="exampleFormControlInput1" class="form-label"><b>What is your income ?</b> </label>
+            <input type="text" class="form-control" id="Income" name="Income" placeholder="Enter your income" required>
+            <br> 
+
+            <label for="exampleFormControlInput1" class="form-label"><b>What is your age ?</b> </label>
+            <input type="text" class="form-control" id="Age" name="Age" placeholder="Enter your age" required>
+            <br> 
+
+
+            <label for="exampleFormControlInput1" class="form-label"><b>What is your professional experience  years ?</b> </label>
+            <input type="text" class="form-control" id="Experience" name="Experience" placeholder="Enter your experience" required>
+            <br> 
+
+            <label for="exampleFormControlInput1" class="form-label"><b>What is your experience years in current professional ?</b> </label>
+            <input type="text" class="form-control" id="CURRENT_JOB_YRS" name="CURRENT_JOB_YRS" placeholder="Enter your experience" required>
+            <br> 
+
+            <label for="exampleFormControlInput1" class="form-label"><b>What is the number of years in the current residence ?</b> </label>
+            <input type="text" class="form-control" id="CURRENT_HOUSE_YRS" name="CURRENT_HOUSE_YRS" placeholder="Enter number of years" required>
+            <br> 
+      
+
+            
+    
+              <table>
+                <b>What is your status ?</b>
+    
+                <input
+                  list="Status"
+                  name="Status"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="Status">
+                  <option value="single">single</option>
+                  <option value="married">married</option>
+                </datalist>
+              </table>
+              <br />
+    
+              <table>
+                <b>Do you have a car ?</b>
+    
+                <input
+                  list="Car_Ownership"
+                  name="Car_Ownership"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="Car_Ownership">
+                  <option value="yes">yes</option>
+                  <option value="no">no</option>
+                </datalist>
+              </table>
+              <br />
+
+              <table>
+                <b>Do you have a apartment ?</b>
+    
+                <input
+                  list="House_Ownership"
+                  name="House_Ownership"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="House_Ownership">
+                  <option value="owned">owned</option>
+                  <option value="rented">rented</option>
+                  <option value="norent_noown">norent_noown</option>
+                </datalist>
+              </table>
+              <br />
+    
+
+
+              <input class="predict" style="
+                 text-align: center;
+                 width: 258px;
+                 border-radius: 30px;"
+                type="submit" value="Predict">
+
+            </form>
+
+        </div>
+       
+      </div>
+
+      
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style=" background-size: cover ;"
+  
+    <div class="hero-container" data-aos="fade-in">
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" >
+
+        <div class="section-title" >
+          <h2>About</h2>
+          <p style="font-size: 25px;">
+             Did you know that machine learning models can help you predict many things with great accuracy?!&#128562; <br>
+            The organization wants to anticipate potential defaulters for a consumer loan product. 
+            They have data about historical customer behavior based on what they have observed. Hence,
+             when they acquire new clients, they want to predict who is riskier and who isn't.
+            Therefore, this application is designed to help identify the behavior of new customers.</p>
+        </div>
+
+        <div class="row" >
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="/static/images/12.jpg" class="img-fluid" alt="">
+
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <p class="fst-italic">
+             <p style="font-size: 25px;"> To see the behavior of new customers, simply follow the steps bellow: <br>
+                - Filling the data that describe him &#9997. <br>
+                -  Press "Predict" and wait for the result &#128151;. <br>
+            </p>
+            </div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/purecounter/purecounter.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/typed.js/typed.min.js"></script>
+  <script src="/static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
